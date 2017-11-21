@@ -4,11 +4,18 @@ export default class Moderator {
         String.prototype.capitalizeFirstLetter = function () {
             return this.charAt(0).toUpperCase() + this.slice(1);
         };
-    }    
-    
+    }
+
+    options = [];
+    character = {};
+    character2 = {}    
     
     //"globals"
-    night = {image: '', order: []};
+    night = {image: '', order: {first: character, second: character2}};
+
+    orderNight() {
+        if (options.includes('seer')) night.first = character;
+    }
     
     //document.getElementById('generate').addEventListener('click', generateForm);
     
@@ -74,77 +81,7 @@ export default class Moderator {
         //Every Other Night: White Wolf, Wolf Hunter (if exists)
         //Every Night: Defender, Dracula, Vampires, Werwolves, Big Bad (until one wolf killed), Witch, Gypsy, Psychic Sisters, Collector, Vigilante
         //Witch is always after the werewolves, Dracula always before werewolves
-        switch (elementObject.newListItem){
-            case 'wildchilditem':
-                firstNight.push(elementObject.textToDisplay);
-                break;
-            case 'wolfhounditem':
-                firstNight.push(elementObject.textToDisplay);
-                break;
-            case 'cupiditem': 
-                firstNight.push('Cupid', 'Lovers');
-                break;
-            case 'threebrothersitem':
-                firstNight.push('Three Brothers');
-                break;
-            case 'psychicsistersitem':
-                firstNight.push('Psychic Sisters');
-                secondNight.push('Psychic Sisters');
-                thirdNight.push('Psychic Sisters');
-                fourthNight.push('Psychic Sisters');
-                break;
-            case 'gypsyitem':
-                secondNight.push(elementObject.textToDisplay);
-                thirdNight.push(elementObject.textToDisplay);
-                fourthNight.push(elementObject.textToDisplay);
-                break;
-            case 'defenderitem':
-                secondNight.push(elementObject.textToDisplay);
-                thirdNight.push(elementObject.textToDisplay);
-                fourthNight.push(elementObject.textToDisplay);
-                break;
-            case 'draculaitem':
-                firstNight.push('Dracula','Vampires');
-                secondNight.push('Dracula','Vampires');
-                thirdNight.push('Dracula','Vampires');
-                fourthNight.push('Dracula','Vampires');
-                break;
-            case 'werewolfitem': 
-                firstNight.push('Werewolves');
-                secondNight.push('Werewolves');
-                thirdNight.push('Werewolves');
-                fourthNight.push('Werewolves');
-                break;
-            case 'bigbadwolfitem':
-                firstNight.push(elementObject.textToDisplay);
-                secondNight.push(elementObject.textToDisplay);
-                thirdNight.push(elementObject.textToDisplay);
-                fourthNight.push(elementObject.textToDisplay);
-                break;
-            case 'whitewolfitem':
-                secondNight.push(elementObject.textToDisplay);
-                fourthNight.push(elementObject.textToDisplay);
-                break;
-            case 'angelitem': //break this out into another function that handles this logic?
-                firstNight.push(elementObject.textToDisplay);
-                break;                
-            case 'witchitem': 
-                firstNight.push(elementObject.textToDisplay);
-                secondNight.push(elementObject.textToDisplay);
-                thirdNight.push(elementObject.textToDisplay);
-                fourthNight.push(elementObject.textToDisplay);
-                break;
-            case 'vigilanteitem':
-                secondNight.push(elementObject.textToDisplay);
-                thirdNight.push(elementObject.textToDisplay);
-                fourthNight.push(elementObject.textToDisplay);
-                break;
-            case 'collectoritem':
-                secondNight.push(elementObject.textToDisplay + ' (as it applies)');
-                thirdNight.push(elementObject.textToDisplay + ' (as it applies)');
-                fourthNight.push(elementObject.textToDisplay + ' (as it applies)');
-                break;
-        }
+        
     }
     
     
