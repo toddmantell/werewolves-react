@@ -1,6 +1,6 @@
 {
   "name": "werewolves-react",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "update of the previous werewolves repo, done with react",
   "main": "src/server/index.js",
   "scripts": {
