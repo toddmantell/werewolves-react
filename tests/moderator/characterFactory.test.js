@@ -3,7 +3,7 @@ import {characterFactory} from '../../src/moderator/characterFactory';
 
 describe('characterFactory', () => {
   it('should return a werewolf', () => {
-    const expected = {name: 'werewolf', night: 1};
+    const expected = {name: 'werewolf', night: 1, order: 100};
 
     const result = characterFactory('werewolf');
 
@@ -11,7 +11,7 @@ describe('characterFactory', () => {
   });
 
   it('should return an angel', () => {
-    const expected = {name: 'angel', night: 0};
+    const expected = {name: 'angel', night: 0, order: 150};
 
     const result = characterFactory('angel');
 
