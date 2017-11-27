@@ -17,18 +17,18 @@ module.exports = {
         "react"
     ],
     "rules": {
+			"curly": "error",
         "indent": [
             "error",
-            "spaces"
+						"tab",
+						{SwitchCase: 1}
         ],
         "linebreak-style": [
             "error",
             "windows"
         ],
-        "quotes": [
-            "error",
-            "double"
-        ],
+        "no-undef": "off",
+        "no-unused-vars": "off",
         "semi": [
             "error",
             "always"
