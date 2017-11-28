@@ -1,6 +1,6 @@
 import {render, hydrate} from 'react-dom';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import ModeratorContainer from '../../moderator/index';
+import ModeratorContainer from '../Moderator';
 
 const App = () => (
 	<Router>
