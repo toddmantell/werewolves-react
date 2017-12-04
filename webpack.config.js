@@ -1,5 +1,6 @@
 const path = require("path");
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const WebpackShellPlugin = require('webpack-shell-plugin');
 
 module.exports = {
 	entry: ['./src/components/app'],
@@ -25,5 +26,7 @@ module.exports = {
 			}
 		]
 	},
-	plugins: [new UglifyJSPlugin()]
+	plugins: [new UglifyJSPlugin(), new WebpackShellPlugin({
+		onBuildEnd: ['nodemon src/server']
+	})]
 };

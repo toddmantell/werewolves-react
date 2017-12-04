@@ -19,10 +19,8 @@ describe('characterFactory', () => {
 	});
 
 	it('should return false by default', () => {
-		const expected = false;
-
 		const result = characterFactory({});
 
-		expect(result).to.equal(expected);
+		expect(result).to.be.false;
 	});
 });

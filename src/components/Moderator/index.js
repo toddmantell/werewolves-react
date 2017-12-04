@@ -12,7 +12,7 @@ export default class ModeratorContainer extends Component {
 	};
 
 	render() {
-		<ModeratorView />;
+		return <ModeratorView characters={[]} />;
 	}
 }
 
