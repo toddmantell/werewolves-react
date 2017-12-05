@@ -4,7 +4,7 @@ import Character from './CharacterView';
 
 const ModeratorView = props => (
 	<main>
-		{props.characters.map(item => <Character characterName={item.name} night={item.night}/>)}
+		{props.characters.map((item, index) => <Character key={index + '-' + item.name} characterName={item.name} night={item.night}/>)}
 	</main>
 );
 
