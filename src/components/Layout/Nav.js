@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const Nav = () => (
+export default () => (
 	<nav style={{backgroundColor: 'midnightblue'}}>
 		<span style={{color: 'white', fontWeight: 600}}>
 			<Link to="/moderator">Moderator</Link>
@@ -11,5 +11,3 @@ const Nav = () => (
 		</span>
 	</nav>
 );
-
-export default Nav;
