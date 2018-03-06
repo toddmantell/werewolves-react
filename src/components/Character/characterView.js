@@ -11,17 +11,18 @@ const CharacterDescription = styled.div`
 	font-weight: 600;
 `;
 
-const Character = ({characterName, night, characterImage}) => {
+export default ({characterName, night, characterImage, description}) => {
 	return (
 		<CharacterDiv>
 			<CharacterDescription>
-				{characterName}
+				{characterName} {characterImage}
 				<div>
 					Night: {night}
+				</div>
+				<div>
+					{description}
 				</div>
 			</CharacterDescription>
 		</CharacterDiv>
 	);
 };
-
-export default Character;

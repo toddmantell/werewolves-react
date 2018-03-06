@@ -1,7 +1,5 @@
-import characterFactory from './characterFactory';
-
-function nightGenerator(character) {
-	if (character.direwolf === true) {
+export default function (character) {
+	if (character.characterName === 'direwolf') {
 		return {
 			name: 'Dire Wolf',
 			nights: [2, 4, 6], //This should be dependent on number of players

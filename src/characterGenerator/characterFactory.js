@@ -1,4 +1,4 @@
-import * as constants from './constants';
+import * as constants from '../constantsAndUtilities/constants';
 
 export function characterFactory(characterName) {
 	switch (characterName) {
