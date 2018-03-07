@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { characterFactory } from '../../src/components/moderator/characterFactory';
+import { characterFactory } from '../../src/characterGenerator/characterFactory';
 
 describe('characterFactory', () => {
 	it('should return a werewolf when given werewolf as the characterName', () => {
