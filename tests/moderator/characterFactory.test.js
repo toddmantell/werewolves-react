@@ -1,4 +1,3 @@
-import { expect } from 'chai';
 import { characterFactory } from '../../src/characterGenerator/characterFactory';
 
 describe('characterFactory', () => {
@@ -7,7 +6,7 @@ describe('characterFactory', () => {
 
 		const result = characterFactory('werewolf');
 
-		expect(result).to.eql(expected);
+		expect(result).toMatchObject(expected);
 	});
 
 	it('should return an angel when given angel as the characterName', () => {
@@ -15,12 +14,12 @@ describe('characterFactory', () => {
 
 		const result = characterFactory('angel');
 
-		expect(result).to.eql(expected);
+		expect(result).toMatchObject(expected);
 	});
 
 	it('should return false by default when given no characterName', () => {
 		const result = characterFactory({});
 
-		expect(result).to.be.false;
+		expect(result).toBeFalsy.false;
 	});
 });

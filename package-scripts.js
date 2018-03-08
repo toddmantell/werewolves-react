@@ -5,9 +5,13 @@ module.exports = {
 			default: "webpack",
 			dev: "webpack --watch --config webpack.config.js"
 		},
+		// test: {
+		// 	default: "mocha --require babel-core/register --recursive tests/",
+		// 	watch: "mocha --require babel-core/register --recursive tests/ --watch"
+		// }
 		test: {
-			default: "mocha --require babel-core/register --recursive tests/",
-			watch: "mocha --require babel-core/register --recursive tests/ --watch"
+			default: "jest",
+			watch: "jest --watch"
 		} 
 	}
 };
