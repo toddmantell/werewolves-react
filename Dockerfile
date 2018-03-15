@@ -7,4 +7,4 @@ RUN npm install
 
 EXPOSE 5000
 
-ENTRYPOINT [ "nps" ]
+ENTRYPOINT [ "npm", "start" ]

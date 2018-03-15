@@ -15,11 +15,9 @@ describe('characterCard Tests', () => {
 		expect(fullyRenderedCard.find('div').length).toBe(4);
 	});
 	
-	it('should render with the correct name', () => {
+	it('should match the snapshot', () => {
 		const fullyRenderedCard = Enzyme.mount(<CharacterCard {...cardProps} />);
 
-		const bobDiv = fullyRenderedCard.find('div[id="description"]');
-
-		expect(bobDiv.text()).toBe("Bob");
+		expect(fullyRenderedCard).toMatchSnapshot();
 	});
 });
