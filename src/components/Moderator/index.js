@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ModeratorView from './ModeratorView';
 import PropTypes from 'prop-types';
-import { characterFactory } from './characterFactory';
+import { characterFactory } from '../../characterGenerator/characterFactory';
 
 export default class ModeratorContainer extends Component {
 	state = {characters: [{ name: 'characterName', night: 1, order: 20 }]};

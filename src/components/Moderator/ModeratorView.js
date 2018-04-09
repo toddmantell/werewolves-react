@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Character from './CharacterView';
+import Character from '../Character';
 import propTypes from 'prop-types';
 
-export default ModeratorView = props => (
+const ModeratorView = props => (
 	<main>
 		{props.characters.map((item, index) => <Character key={index + '-' + item.name} characterName={item.name} night={item.night}/>)}
 	</main>
@@ -17,3 +17,5 @@ ModeratorView.propTypes = {
 		description: propTypes.string
 	})
 };
+
+export default ModeratorView;
