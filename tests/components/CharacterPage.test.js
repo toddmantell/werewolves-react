@@ -1,10 +1,6 @@
 import React from 'react';
-import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import * as constants from '../../src/constantsAndUtilities/constants';
-import CharacterPage from '../../src/components/Character/CharacterPage';
-
-Enzyme.configure({adapter: new Adapter()});
+import CharacterPage from '../../src/components/Character';
 
 describe('CharacterPage Tests', () => {
 	//We're getting 8 divs instead of 9 (9 because the Cards should be wrapped in a div)
@@ -12,7 +8,7 @@ describe('CharacterPage Tests', () => {
 		const charactersArray = [{ characterName: 'Bob', night: constants.FIRST_NIGHT_ONLY, characterImage: 'somepath/path', description: "He's a character" }, 
 			{ characterName: 'Bonnie', night: constants.EVERY_OTHER_NIGHT, characterImage: 'somepath/path', description: "She's a character" }];
 
-		const fullyRenderedPage = Enzyme.render(<CharacterPage characters={charactersArray} />);
+		const fullyRenderedPage = render(<CharacterPage characters={charactersArray} />);
 		
 		expect(fullyRenderedPage.find('div').length).toBe(8);
 	});
@@ -21,7 +17,7 @@ describe('CharacterPage Tests', () => {
 		const charactersArray = [{ characterName: 'Bob', night: constants.FIRST_NIGHT_ONLY, characterImage: 'somepath/path', description: "He's a character" }, 
 			{ characterName: 'Bonnie', night: constants.EVERY_OTHER_NIGHT, characterImage: 'somepath/path', description: "She's a character" }];
 
-		const fullyRenderedPage = Enzyme.render(<CharacterPage characters={charactersArray} />);
+		const fullyRenderedPage = render(<CharacterPage characters={charactersArray} />);
 		
 		expect(fullyRenderedPage.find('img').length).toBe(2);
 	});

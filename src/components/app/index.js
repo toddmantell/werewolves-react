@@ -3,14 +3,13 @@ import {render, hydrate} from 'react-dom';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import ModeratorContainer from '../Moderator';
 import Night from '../Night';
+import Layout from '../Layout';
 import Nav from '../Layout/Nav';
 
+//TODO: Layout should go here
 const App = () => (
 	<main>
-		<Nav />
-		<div style={{color: 'purple', fontWeight: '600'}}>
-			Put app content here.
-		</div>
+		<Layout windowSize={window.innerWidth || 1000}/>
 		<Route exact path="/" component={() => ''} />
 		<Route path="/moderator" component={ModeratorContainer} />
 		<Route path="/night" component={Night} />

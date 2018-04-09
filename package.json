@@ -11,7 +11,8 @@
     "start": "nps"
   },
   "jest": {
-    "verbose": true
+    "verbose": true,
+    "setupFiles": ["./tests/jestSetup"]
   },
   "author": "Todd Mantell",
   "license": "ISC",

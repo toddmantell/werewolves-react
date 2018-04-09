@@ -5,20 +5,21 @@ import TopNav from './Nav';
 import Footer from './Footer';
 import MobileNav from './MobileMenu';
 
-const Layout = props => (
+const Layout = ({windowSize}) => (
 	<div>
-		<Nav />
+		{renderTopOrBottomNav(windowSize)}
 		<h2>Header!</h2>
+		<div style={{color: 'purple', fontWeight: '600'}}>
+			Put app content here.
+		</div>
 		<Footer />
-		{
-			props.windowSize < 400 ? <MobileMenu /> : null
-		}
+		{renderTopOrBottomNav(windowSize)}
 	</div>
 );
 
 function renderTopOrBottomNav(windowSize) {
 	if (windowSize > 400) return <TopNav />;
-	else if (windowSize < 400) return <MobileNav />;
+	else if (windowSize <= 400) return <MobileNav />;
 	return null;
 }
 
