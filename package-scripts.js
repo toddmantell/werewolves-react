@@ -8,6 +8,9 @@ module.exports = {
 		test: {
 			default: "jest --coverage",
 			watch: "jest --watch --coverage"
+		},
+		format: {
+			default: "prettier --write"
 		}
 	}
 };

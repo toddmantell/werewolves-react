@@ -1,6 +1,7 @@
 import React from 'react';
 import CharacterCard from '../../src/components/Character/characterCard';
 import * as constants from '../../src/constantsAndUtilities/constants';
+import toJson from 'enzyme-to-json';
 
 describe('characterCard Tests', () => {
 	const cardProps = { characterName: 'Bob', night: constants.FIRST_NIGHT_ONLY, characterImage: 'somepath/path', description: "He's a character" };
@@ -21,6 +22,6 @@ describe('characterCard Tests', () => {
 	it('should match the snapshot', () => {
 		const renderedCard = render(<CharacterCard {...cardProps} />);
 
-		expect(renderedCard).toMatchSnapshot();
+		expect(toJson(renderedCard)).toMatchSnapshot();
 	});
 });
