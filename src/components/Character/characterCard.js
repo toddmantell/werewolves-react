@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {string, number} from 'prop-types';
 
 const CharacterDiv = styled.div`
 	padding: 0;
@@ -11,11 +12,11 @@ const CharacterDescription = styled.div`
 	font-weight: 600;
 `;
 
-export default ({characterName, night, characterImage, description}) => {
+const CharacterCard = ({characterName, night, characterImage, description}) => {
 	return (
 		<CharacterDiv>
 			<CharacterDescription>
-				{characterName} {characterImage}
+				{characterName} <img src={characterImage} />
 				<div>
 					Night: {night}
 				</div>
@@ -26,3 +27,12 @@ export default ({characterName, night, characterImage, description}) => {
 		</CharacterDiv>
 	);
 };
+
+CharacterCard.propTypes = {
+	characterName: string.isRequired,
+	night: number.isRequired,
+	characterImage: string.isRequired,
+	description: string.isRequired
+};
+
+export default CharacterCard;

@@ -1,17 +1,16 @@
 module.exports = {
 	scripts: {
-		default: "nodemon src/server",
+		default: "webpack && nodemon src/server",
 		build: {
 			default: "webpack",
 			dev: "webpack --watch --config webpack.config.js"
 		},
-		// test: {
-		// 	default: "mocha --require babel-core/register --recursive tests/",
-		// 	watch: "mocha --require babel-core/register --recursive tests/ --watch"
-		// }
 		test: {
-			default: "jest",
-			watch: "jest --watch"
-		} 
+			default: "jest --coverage",
+			watch: "jest --watch --coverage"
+		},
+		format: {
+			default: "prettier --write"
+		}
 	}
 };
