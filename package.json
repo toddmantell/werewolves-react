@@ -18,7 +18,8 @@
   },
   "prettier": {
     "printWidth": 120,
-    "parens": "avoid"
+    "arrowParens": "avoid",
+    "semi": false
   },
   "author": "Todd Mantell",
   "license": "ISC",
