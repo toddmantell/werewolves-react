@@ -10,7 +10,7 @@ module.exports = {
 			watch: "jest --watch --coverage"
 		},
 		format: {
-			default: "prettier --write"
+			default: "prettier --write --config package.json src/**/*.js"
 		}
 	}
 };

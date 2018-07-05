@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../../src/components/Layout';
-// do a global enzyme setup
+import toJson from 'enzyme-to-json';
 
 describe('Name of the group', () => {
 	it('should render the mobile nav when window size is < 400', () => {
@@ -12,7 +12,7 @@ describe('Name of the group', () => {
 	it('should render the desktop nav when window size is > 400', () => {
 		const shallowRenderedLayout = shallow(<Layout windowSize={1200} />);
 
-		expect(shallowRenderedLayout.find('Nav').length).toBe(1);
+		expect(shallowRenderedLayout.find('TopNav').length).toBe(1);
 	});
 	
 	it('should not render a nav when window size is null', () => {
