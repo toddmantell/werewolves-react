@@ -12,7 +12,12 @@ export default class ModeratorContainer extends Component {
   }
 
   render() {
-    return <ModeratorView characters={this.state.characters} addCharacterToGame={this.addCharacterToGame} />
+    return (
+      <ModeratorView
+        characters={this.state.characters}
+        addCharacterToGame={this.addCharacterToGame}
+      />
+    )
   }
 }
 

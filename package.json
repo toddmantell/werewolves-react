@@ -16,11 +16,6 @@
       "./tests/jestSetup"
     ]
   },
-  "prettier": {
-    "printWidth": 120,
-    "arrowParens": "avoid",
-    "semi": false
-  },
   "author": "Todd Mantell",
   "license": "ISC",
   "dependencies": {

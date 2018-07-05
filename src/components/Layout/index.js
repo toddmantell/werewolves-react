@@ -5,15 +5,16 @@ import TopNav from "./TopNav"
 import Footer from "./Footer"
 import MobileNav from "./MobileNav"
 
-const Layout = ({ windowSize }) => (
+const Layout = ({ windowSize }) =>
   <div>
     {renderTopNav(windowSize)}
     <h2>Header!</h2>
-    <div style={{ color: "purple", fontWeight: "600" }}>Put app content here.</div>
+    <div style={{ color: "purple", fontWeight: "600" }}>
+      Put app content here.
+    </div>
     <Footer />
     {renderBottomNav(windowSize)}
   </div>
-)
 
 function renderTopNav(windowSize) {
   console.log("windowSize", windowSize)
@@ -23,7 +24,8 @@ function renderTopNav(windowSize) {
 }
 
 function renderBottomNav(windowSize) {
-  if (windowSize <= 400) return <MobileNav menuItems={['something','another thing']} />
+  if (windowSize <= 400)
+    return <MobileNav menuItems={["something", "another thing"]} />
   return null
 }
 

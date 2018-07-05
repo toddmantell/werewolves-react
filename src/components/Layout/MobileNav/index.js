@@ -8,13 +8,12 @@ const Menu = styled.main`
   height: 50px;
 `
 
-const MobileNav = ({ menuItems }) => (
+const MobileNav = ({ menuItems }) =>
   <Menu>
     {menuItems.map(item => {
       ;<MenuItem {...item} />
     })}
   </Menu>
-)
 
 MobileNav.propTypes = {
   menuItems: arrayOf(object)
