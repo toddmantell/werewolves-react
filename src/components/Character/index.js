@@ -8,9 +8,12 @@ const Page = styled.div`
   margin: 0;
 `
 
-const CharacterPage = ({ characters }) => (
-  <Page>{characters.map((character, index) => <CharacterCard key={`card-${index}`} {...character} />)}</Page>
-)
+const CharacterPage = ({ characters }) =>
+  <Page>
+    {characters.map((character, index) =>
+      <CharacterCard key={`card-${index}`} {...character} />
+    )}
+  </Page>
 
 CharacterPage.propTypes = {
   characters: PropTypes.arrayOf(

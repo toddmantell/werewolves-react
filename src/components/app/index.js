@@ -7,14 +7,13 @@ import Layout from "../Layout"
 import Nav from "../Layout/Nav"
 
 //TODO: Layout should go here
-const App = () => (
+const App = () =>
   <main>
     <Layout windowSize={window.innerWidth} />
     <Route exact path="/" component={() => ""} />
     <Route path="/moderator" component={ModeratorContainer} />
     <Route path="/night" component={Night} />
   </main>
-)
 
 render(
   <Router>

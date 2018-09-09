@@ -12,7 +12,12 @@ const CharacterDescription = styled.div`
   font-weight: 600;
 `
 
-const CharacterCard = ({ characterName, night, characterImage, description }) => {
+const CharacterCard = ({
+  characterName,
+  night,
+  characterImage,
+  description
+}) => {
   return (
     <CharacterDiv>
       <CharacterDescription>

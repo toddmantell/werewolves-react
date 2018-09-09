@@ -1,6 +1,6 @@
 {
   "name": "werewolves-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "update of the previous werewolves repo, done with react",
   "repository": {
     "type": "git",
@@ -15,11 +15,6 @@
     "setupFiles": [
       "./tests/jestSetup"
     ]
-  },
-  "prettier": {
-    "printWidth": 120,
-    "arrowParens": "avoid",
-    "semi": false
   },
   "author": "Todd Mantell",
   "license": "ISC",
