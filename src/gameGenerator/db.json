@@ -1,0 +1,7 @@
+{
+  "tables": [
+    {"rooms": [
+      {"id": 0, "moderator": "root"}
+    ]}
+  ]
+}
