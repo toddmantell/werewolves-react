@@ -1,6 +1,6 @@
 import React from "react"
 import CharacterCard from "../../src/components/Character/characterCard"
-import * as constants from "../../src/constantsAndUtilities/constants"
+import * as constants from "../../src/constants"
 import toJson from "enzyme-to-json"
 
 describe("characterCard Tests", () => {

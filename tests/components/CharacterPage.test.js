@@ -1,5 +1,5 @@
 import React from "react"
-import * as constants from "../../src/constantsAndUtilities/constants"
+import * as constants from "../../src/constants"
 import CharacterPage from "../../src/components/Character"
 
 describe("CharacterPage Tests", () => {
@@ -20,9 +20,7 @@ describe("CharacterPage Tests", () => {
       }
     ]
 
-    const fullyRenderedPage = render(
-      <CharacterPage characters={charactersArray} />
-    )
+    const fullyRenderedPage = render(<CharacterPage characters={charactersArray} />)
 
     expect(fullyRenderedPage.find("div").length).toBe(8)
   })
@@ -43,9 +41,7 @@ describe("CharacterPage Tests", () => {
       }
     ]
 
-    const fullyRenderedPage = render(
-      <CharacterPage characters={charactersArray} />
-    )
+    const fullyRenderedPage = render(<CharacterPage characters={charactersArray} />)
 
     expect(fullyRenderedPage.find("img").length).toBe(2)
   })

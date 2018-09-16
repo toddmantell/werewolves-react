@@ -1,83 +1,83 @@
-import * as constants from "../constantsAndUtilities/constants"
+import {CHARACTERS, NIGHTS} from "../constants"
 
 export function characterFactory(characterName) {
   switch (characterName) {
-    case "wildchild":
+    case CHARACTERS.WILDCHILD:
       return {
         name: characterName,
-        night: constants.FIRST_NIGHT_ONLY,
+        night: NIGHTS.FIRST_NIGHT_ONLY,
         order: 20
       }
-    case "cupid":
+    case CHARACTERS.CUPID:
       return {
         name: characterName,
-        night: constants.FIRST_NIGHT_ONLY,
+        night: NIGHTS.FIRST_NIGHT_ONLY,
         order: 30
       }
-    case "threebrothers":
+    case CHARACTERS.THREE_BROTHERS:
       return {
         name: characterName,
-        night: constants.FIRST_NIGHT_ONLY,
+        night: NIGHTS.FIRST_NIGHT_ONLY,
         order: 50
       }
-    case "angel":
+    case CHARACTERS.ANGEL:
       return {
         name: characterName,
-        night: constants.FIRST_NIGHT_ONLY,
+        night: NIGHTS.FIRST_NIGHT_ONLY,
         order: 150
       }
-    case "werewolf":
-      return { name: characterName, night: constants.EVERY_NIGHT, order: 100 }
-    case "psychicsisters":
+    case CHARACTERS.WEREWOLF:
+      return { name: characterName, night: NIGHTS.EVERY_NIGHT, order: 100 }
+    case CHARACTERS.PSYCHIC_SISTERS:
       return {
         name: characterName,
-        night: constants.AFTER_FIRST_EVERY_NIGHT,
+        night: NIGHTS.AFTER_FIRST_EVERY_NIGHT,
         order: 60
       }
-    case "defender":
+    case CHARACTERS.DEFENDER:
       return {
         name: characterName,
-        night: constants.AFTER_FIRST_EVERY_NIGHT,
+        night: NIGHTS.AFTER_FIRST_EVERY_NIGHT,
         order: 10
       }
-    case "witch":
-      return { name: characterName, night: constants.EVERY_NIGHT, order: 160 }
-    case "bigbadwolf":
-      return { name: characterName, night: constants.EVERY_NIGHT, order: 110 }
-    case "gypsyitem":
+    case CHARACTERS.WITCH:
+      return { name: characterName, night: NIGHTS.EVERY_NIGHT, order: 160 }
+    case CHARACTERS.BIG_BAD_WOLF:
+      return { name: characterName, night: NIGHTS.EVERY_NIGHT, order: 110 }
+    case CHARACTERS.GYPSY:
       return {
         name: characterName,
-        night: constants.AFTER_FIRST_EVERY_NIGHT,
+        night: NIGHTS.AFTER_FIRST_EVERY_NIGHT,
         order: 80
       }
-    case "direwolf":
+    case CHARACTERS.DIRE_WOLF:
       return {
         name: characterName,
-        night: constants.EVERY_OTHER_NIGHT,
+        night: NIGHTS.EVERY_OTHER_NIGHT,
         order: 120
       }
-    case "whitewolf":
+    case CHARACTERS.WHITE_WOLF:
       return {
         name: characterName,
-        night: constants.EVERY_OTHER_NIGHT,
+        night: NIGHTS.EVERY_OTHER_NIGHT,
         order: 130
       }
-    case "dracula":
+    case CHARACTERS.DRACULA:
       return {
         name: characterName,
-        night: constants.EVERY_OTHER_NIGHT,
+        night: NIGHTS.EVERY_OTHER_NIGHT,
         order: 70
       }
-    case "collector":
-      return { name: characterName, night: constants.DEPENDENT, order: -999 }
-    case "vigilante":
+    case CHARACTERS.COLLECTOR:
+      return { name: characterName, night: NIGHTS.DEPENDENT, order: -999 }
+    case CHARACTERS.VIGILANTE:
       return {
         name: characterName,
-        night: constants.AFTER_FIRST_EVERY_NIGHT,
+        night: NIGHTS.AFTER_FIRST_EVERY_NIGHT,
         order: 170
       }
-    case "knight":
-      return { name: characterName, night: constants.KNIGHT, order: -999 }
+    case CHARACTERS.KNIGHT:
+      return { name: characterName, night: NIGHTS.KNIGHT, order: -999 }
     case "resuscitated":
       return {}
     default:
