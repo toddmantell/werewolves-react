@@ -2,6 +2,10 @@ import {CHARACTERS, NIGHTS} from "../constants"
 
 export function characterFactory(characterName) {
   switch (characterName) {
+		case CHARACTERS.VILLAGER:
+      return {
+        name: characterName
+      }
     case CHARACTERS.WILDCHILD:
       return {
         name: characterName,
@@ -81,6 +85,6 @@ export function characterFactory(characterName) {
     case "resuscitated":
       return {}
     default:
-      return false
+      return null;
   }
 }

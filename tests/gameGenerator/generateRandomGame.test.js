@@ -1,32 +1,20 @@
-import generateRandomGame from "../../src/gameGenerator/generateRandomGame";
+//@ts-check
+import generateRandomCharacterAssignments from "../../src/gameGenerator/generateRandomCharacterAssignments";
 import { CHARACTERS, NIGHTS } from "../../src/constants";
 import findNumberOfWerwolves from "../../src/gameGenerator/findNumberOfWerewolves";
 
 describe('generateRandomGame()', () => {
 	it('should return 5 players with 5 characters when given those arrays', () => {
-		const expected = {
-			players: [
-				{
-					name: 'Todd',
-					character: {
-						name: CHARACTERS.VILLAGER,
-						night: NIGHTS.FIRST_NIGHT_ONLY,
-						order: 20
-					}
-				}
-			]
-		};
-
-		const playersArray = [{name: 'Todd', id: ''}, {name: 'Kasia', id: ''}, {name: 'Jay', id: ''}, {name: 'Karolina', id: ''}, {name: 'Kevin', id: ''}];
-
-		const newRandomGame = generateRandomGame(playersArray, [CHARACTERS.WEREWOLF, CHARACTERS.WEREWOLF, CHARACTERS.VILLAGER, CHARACTERS.VIGILANTE]);
-
-		console.log('newRandomGame: ', newRandomGame);
+		const playersArray = [{ name: "Todd", id: 1 }, { name: "Karolina", id: 2 }, { name: "Kevin", id: 3 }, { name: "Kasia", id: 4 }, { name: "Jay", id: 5 }];
+		const charactersInGame = [CHARACTERS.VILLAGER, CHARACTERS.WEREWOLF];
+		const randomlyGeneratedCharacters = generateRandomCharacterAssignments(playersArray, charactersInGame);
 		
-		const villagerCount = newRandomGame.players.reduce((accumulator, player) => {
-			if (player.character.characterName === CHARACTERS.VILLAGER || player.character.characterName === CHARACTERS.VIGILANTE) return accumulator + 1
+		let villagerCount = 0;
+		
+		randomlyGeneratedCharacters.forEach(player => {
+			if (player.character.name === CHARACTERS.VILLAGER || player.character.name === CHARACTERS.VIGILANTE) return villagerCount++;		
 		})
-
+		
 		expect(villagerCount).toEqual(3)
 	})
 

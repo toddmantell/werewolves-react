@@ -1,10 +1,10 @@
-import generateRandomGame from "./generateRandomGame";
+import generateRandomCharacterAssignments from "./generateRandomCharacterAssignments";
 
-export default playersArray => {
+export default (playersArray, isRandomlyGenerated, charactersInGame) => {
 	//TODO: Need two options: 1. randomly assign characters 2. manually assign characters (manual assignment should happen in the UI, with assistance from a module)
 	return {
 		gameId: generateGameId(),
-		players: generateRandomGame(playersArray)
+		players: isRandomlyGenerated ? generateRandomCharacterAssignments(playersArray, charactersInGame) : playersArray
 	}
 }
 
