@@ -12,7 +12,7 @@ const getRandomCharacterAssignments = (players, charactersInGame) => {
 	let availablePlayers = [...players];
 	let assignedPlayers = [];
 
-	charactersInGame.forEach(characterName => {		
+	charactersInGame.forEach(characterName => {
 		if (WEREWOLVES.includes(characterName)) {
 			while(availableWerewolves) {
 				const randomIndex = Math.floor(Math.random() * availablePlayers.length);
@@ -21,6 +21,7 @@ const getRandomCharacterAssignments = (players, charactersInGame) => {
 				availablePlayers = availablePlayers.filter(player => player.id !== playerToAssign.id)			
 				availableWerewolves--;
 				assignedPlayers = [...assignedPlayers, playerToAssign];
+				if (checkForSingleAssignmentCharacter(characterName)) return;
 			}
 		}
 
@@ -29,19 +30,18 @@ const getRandomCharacterAssignments = (players, charactersInGame) => {
 				const randomIndex = Math.floor(Math.random() * availablePlayers.length);
 				const playerToAssign = availablePlayers[randomIndex];
 				playerToAssign.character = characterFactory(characterName);
-				if (checkForSingleUseCharacter) // don't add any more of this type 
 				availablePlayers = availablePlayers.filter(player => player.id !== playerToAssign.id)
 				availableVillagers--;
 				assignedPlayers = [...assignedPlayers, playerToAssign];
+				if (checkForSingleAssignmentCharacter(characterName)) return;
 			}
-		}		
+		}
 	})
 
-	console.log(JSON.stringify(assignedPlayers))
 	return assignedPlayers;
 }
 
-function checkForSingleUseCharacter(characterName) {
+function checkForSingleAssignmentCharacter(characterName) {
 	return characterName.includes(CHARACTERS.VIGILANTE) ||
 	characterName.includes(CHARACTERS.WITCH) ||
 	characterName.includes(CHARACTERS.DIRE_WOLF) ||

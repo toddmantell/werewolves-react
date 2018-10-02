@@ -23,7 +23,7 @@ describe('generateRandomGame()', () => {
 		const charactersInGame = [CHARACTERS.VIGILANTE, CHARACTERS.VILLAGER, CHARACTERS.WEREWOLF];
 		const randomlyGeneratedCharacters = generateRandomCharacterAssignments(playersArray, charactersInGame);
 		
-		randomlyGeneratedCharacters.forEach(player => console.log(player.character.name))
+		// randomlyGeneratedCharacters.forEach(player => console.log(player.character.name))
 		
 		const vigilante = randomlyGeneratedCharacters.find(player => player.character.name === CHARACTERS.VIGILANTE)
 		const villagers = randomlyGeneratedCharacters.filter(player => player.character.name === CHARACTERS.VILLAGER)		
